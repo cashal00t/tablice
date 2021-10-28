@@ -17,6 +17,10 @@
 2. Tablica 20 elem. - ciąg Fibbonaciego
 3. tablica 100 el. liczby losowe <1;100> max,min.1 wystąpienie, ile razy
 4. ----------||---------------------- <1...50> 2 min
+5. Sortowanie tablicy rosnąco
+6. Tablica 2-wymiarowa 1 macierz
+7. Sprawdzić w których wierszach są liczby parzyste
+8.Tablica 100 el. <0...9>, ile razy występują poszczególne cyfry?
 `));
 
         switch (zadanie) {
@@ -108,7 +112,76 @@
                 break;
             case 4:
 
+                var values = [];
+
+                for (var i = 0; i <= 50; i++) {
+
+                    values[i] = Math.floor(Math.random() * (50 - 1 + 1) + 1);
+                    document.write(values[i] + ' ');
+
+
+
+
+
+                }
+
+                var min = Math.min.apply(Math, values);
+                var min = Math.min.apply(Math, values);
+                document.write("Min: " + min + "Min: " + min);
+
+
                 break;
+            case 5:
+                function sortNum(a, b) {
+                    return a - b;
+                }
+
+
+
+                var arr = [];
+
+                for (var i = 0; i <= 9; i++) {
+
+                    arr[i] = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+                    document.write(arr[i] + ' ');
+
+
+                    var neaw = arr.sort(sortNum);
+
+                }
+
+
+                document.write("Posortowane: " + neaw + " ");
+
+
+
+
+
+
+
+                break;
+
+            case 6:
+
+                const level = [
+
+                    [1, 0, 0, 0, 0]
+
+                    //https://kursjs.pl/kurs/super-podstawy/tablice.php#tablice-wielowymiarowe
+
+
+
+
+
+
+
+                ]
+
+
+                break;
+
+
+
         }
 
     </script>
