@@ -163,22 +163,127 @@
 
             case 6:
 
-                const level = [
+                const q = parseInt(prompt('Podaj q'));
+                let tab = [];
+                for (let i = 0; i < q; i++) {
+                    tab[i] = [];
+                };
+                for (let i = 0; i < q; i++) {
+                    for (let j = 0; j < q; j++) {
+                        j === i ? tab[i][j] = 1 : tab[i][j] = 0
+                    }
+                }
 
-                    [1, 0, 0, 0, 0]
+                let napis = '';
+                for (let i = 0; i < tab.length; i++) {
+                    for (let j = 0; j < tab[i].length; j++) {
+                        napis += tab[i][j] + ' ';
+                    }
+                    napis += '<br>'
+                }
 
-                    //https://kursjs.pl/kurs/super-podstawy/tablice.php#tablice-wielowymiarowe
+                document.write(napis)
 
 
 
 
 
 
-
-                ]
 
 
                 break;
+
+
+            case 7:
+                //Creating an array
+                var how_big = prompt("Size: ", 3);
+                var array = new Array(how_big);
+                for (let i = 0; i < how_big; i++) {
+                    array[i] = new Array();
+                }
+
+                //insertin numbers
+                for (let i = 0; i < how_big; i++) {
+                    for (let n = 0; n < how_big; n++) {
+                        array[i][n] = prompt("Enter a number: ", 2);
+                    }
+                }
+
+                //checking where even
+                var which_even = new Array(how_big);
+
+                for (let i = 0; i < how_big; i++) {
+                    for (let n = 0; n < how_big; n++) {
+                        if (array[i][n] % 2 != 0) {
+                            which_even[i] = false;
+                            break;
+                        }
+                        else {
+                            which_even[i] = true;
+                        }
+                    }
+                }
+                console.log(array);
+                console.log(which_even);
+
+                //creating result
+                var even = [];
+                var n = 0;
+
+                for (let i = 0; i < how_big; i++) {
+                    if (which_even[i] == true) {
+                        even[n] = i;
+                        n++;
+                    }
+                }
+
+                //printing the result
+                var text = "";
+                for (let i = 0; i < how_big; i++) {
+                    text += array[i] + "\n";
+                }
+                alert(text);
+
+                if (even.length > 0) {
+                    alert("Even numbers are in rows with index: " + even);
+                }
+                else {
+                    alert("There are no rows with only even numbers");
+                }
+
+                break;
+
+
+            case 8:
+                //creatin an array
+                var array = new Array(100);
+
+                for (let i = 0; i < 100; i++) {
+                    array[i] = Math.floor(Math.random() * 10);
+                }
+                console.log(array);
+
+                //counting numbrs
+                var each_num = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+                for (let i = 0; i < 100; i++) {
+                    for (let n = 0; n < 10; n++) {
+                        if (array[i] == n) {
+                            each_num[n]++;
+                        }
+                    }
+                }
+
+                //writing the result
+                var text = "Number => how many times it appers\n";
+                for (let i = 0; i < 10; i++) {
+                    text += i + " =>" + each_num[i] + "\n";
+                }
+
+                break;
+
+
+
 
 
 
